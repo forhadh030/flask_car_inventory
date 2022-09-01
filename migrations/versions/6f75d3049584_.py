@@ -35,6 +35,7 @@ def upgrade():
     sa.Column('name', sa.String(length=150), nullable=False),
     sa.Column('model', sa.String(length=150), nullable=False),
     sa.Column('year', sa.String(length=150), nullable=False),
+    sa.Column('price', sa.String(length=200, nullable=True)),
     sa.Column('description', sa.String(length=200), nullable=True),
     sa.Column('car_quality', sa.String(length=20), nullable=True),
     sa.Column('user_token', sa.String(), nullable=False),

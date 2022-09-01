@@ -14,13 +14,14 @@ def create_car(current_user_token):
     name = request.json['name']
     model = request.json['model']
     year = request.json['year']
+    price = request.json['price']
     description = request.json['description']
     car_quality = request.json['car_quality']
     user_token = current_user_token.token
 
     print(f'BIG TESTER: {current_user_token.token}')
 
-    car = Car(name, model, year, description, car_quality, user_token = user_token )
+    car = Car(name, model, year, price, description, car_quality, user_token = user_token )
 
     db.session.add(car)
     db.session.commit()
@@ -55,6 +56,7 @@ def update_car(current_user_token,id):
     car.name = request.json['name']
     car.model = request.json['model']
     car.year = request.json['year']
+    car.price = request.json['price']
     car.description = request.json['description']
     car.car_quality = request.json['car_quality']
     car.user_token = current_user_token.token
