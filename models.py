@@ -65,7 +65,7 @@ class Car(db.Model):
         self.name = name
         self.model = model
         self.year = year
-        self.year = price
+        self.price = price
         self.description = description
         self.car_quality = car_quality
         self.user_token = user_token
@@ -79,7 +79,7 @@ class Car(db.Model):
 
 class CarSchema(ma.Schema):
     class Meta:
-        fields = ['id', 'name','model','year','description', 'car_quality']
+        fields = ['id', 'name','model','year','price','description', 'car_quality']
 
 car_schema = CarSchema()
 cars_schema = CarSchema(many=True)
